@@ -12,7 +12,11 @@ pipeline {
                 bat 'mvn package'
                echo 'mvn --build'
             }
-              
+            
+            finally {
+              junit '**/target/surefire-reports/*.xml'
+            }
+
         }
     }
 }
